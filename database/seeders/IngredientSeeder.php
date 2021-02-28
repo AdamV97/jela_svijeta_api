@@ -23,7 +23,8 @@ class IngredientSeeder extends Seeder
         $this->insertIngredients('Flour', 'Brašno');
     }
 
-    private function insertIngredients(String $en, String $cro): void {
+    private function insertIngredients(String $en, String $cro): void
+    {
         $ingredients = new Ingredient();
         $ingredients->slug = strtolower(str_replace(' ', '_', $en));
         $ingredients->created_at = Carbon::now();
@@ -32,6 +33,6 @@ class IngredientSeeder extends Seeder
 
         $lastId = $ingredients->id;
         $translations = new TranslationSeeder();
-        $translations->insertTranslation($lastId,'ingredient_id' ,'ingredients_translations', $en, $cro);
+        $translations->insertTranslation($lastId, 'ingredient_id', 'ingredients_translations', $en, $cro);
     }
 }

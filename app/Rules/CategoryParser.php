@@ -26,22 +26,22 @@ class CategoryParser implements Rule
     public function passes($attribute, $value)
     {
         //Check if there is laravel help method to parse string null to false
-        if($value === null){
+        if ($value === null) {
             return true;
-        }else if(strtolower($value) === 'null'){
+        } else if (strtolower($value) === 'null') {
             return true;
-        }else if(strtolower($value) === '!null'){
+        } else if (strtolower($value) === '!null') {
             return true;
-        }else if(strlen($value) >= 1){
+        } else if (strlen($value) >= 1) {
             $request = explode(',', $value);
-            if(count($request) > 1){
-                foreach($request as $r){
-                    if(!is_numeric($r)){
+            if (count($request) > 1) {
+                foreach ($request as $r) {
+                    if (!is_numeric($r)) {
                         return false;
                     }
                 }
             }
-        }else{
+        } else {
             return false;
         }
         return true;

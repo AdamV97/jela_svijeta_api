@@ -16,34 +16,39 @@ class Language extends Model
     /**
      * // Todo maybe over mutators -> We are instantiating an object in seeders
      */
-    public function getIsoLabel() {
+    public function getIsoLabel()
+    {
         return $this->iso_label;
     }
 
-    public function setIsoLabel(String $iso_label): void {
+    public function setIsoLabel(String $iso_label): void
+    {
         $this->iso_label = $iso_label;
     }
 
     /**
      * // Todo maybe over mutators -> We are instantiating an object in seeders
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function setName(String $name): void {
+    public function setName(String $name): void
+    {
         $this->name = $name;
     }
-
 
     /**
      * // Todo maybe over mutators -> We are instantiating an object in seeders
      */
-    public function getLocale() {
+    public function getLocale()
+    {
         return $this->locale;
     }
 
-    public function setLocale(String $locale): void {
+    public function setLocale(String $locale): void
+    {
         $this->locale = $locale;
     }
 }

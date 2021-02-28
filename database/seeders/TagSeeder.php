@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Tag;
 use Carbon\Carbon;
-use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Illuminate\Database\Seeder;
 
 class TagSeeder extends Seeder
 {
@@ -26,7 +26,8 @@ class TagSeeder extends Seeder
         $this->insertTags('Spicey', 'Začinjeno', $faker->realText(10));
     }
 
-    private function insertTags(String $en, String $cro, String $slug): void {
+    private function insertTags(String $en, String $cro, String $slug): void
+    {
         $category = new Tag();
         $category->slug = strtolower(str_replace(' ', '_', $en) . $slug);
         $category->created_at = Carbon::now();
@@ -35,6 +36,6 @@ class TagSeeder extends Seeder
 
         $lastId = $category->id;
         $translations = new TranslationSeeder();
-        $translations->insertTranslation($lastId,'tag_id' ,'tags_translations', $en, $cro);
+        $translations->insertTranslation($lastId, 'tag_id', 'tags_translations', $en, $cro);
     }
 }

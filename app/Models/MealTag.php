@@ -13,33 +13,39 @@ class MealTag extends Model
 
     use HasFactory;
 
-    public function tags() {
+    public function tags()
+    {
         return $this->belongsTo(Tag::class, 'id', 'tag_id');
     }
 
-    public function meal() {
+    public function meal()
+    {
         return $this->belongsTo(Meal::class, 'id', 'meal_id');
     }
 
     /**
      * // Todo maybe over mutators -> We are instantiating an object in seeders
      */
-    public function getTagsId() {
+    public function getTagsId()
+    {
         return $this->tag_id;
     }
 
-    public function setTagsId(String $tag_id): void {
+    public function setTagsId(String $tag_id): void
+    {
         $this->tag_id = $tag_id;
     }
 
-        /**
+    /**
      * // Todo maybe over mutators -> We are instantiating an object in seeders
      */
-    public function getMealsId() {
+    public function getMealsId()
+    {
         return $this->meal_id;
     }
 
-    public function setMealsId(String $meal_id): void {
+    public function setMealsId(String $meal_id): void
+    {
         $this->meal_id = $meal_id;
     }
 }

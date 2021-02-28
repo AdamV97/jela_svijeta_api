@@ -11,22 +11,26 @@ class Ingredient extends Model
 
     use HasFactory;
 
-    public function meal(){
+    public function meal()
+    {
         return $this->hasManyThrough(IngredientMeal::class, Meal::class);
     }
 
-    public function ingredientsTranslations() {
+    public function ingredientsTranslations()
+    {
         return $this->hasMany(IngredientTranslation::class);
     }
 
     /**
      * // Todo maybe over mutators -> We are instantiating an object in seeders
      */
-    public function getSlug() {
+    public function getSlug()
+    {
         return $this->slug;
     }
 
-    public function setSlug(String $slug): void {
+    public function setSlug(String $slug): void
+    {
         $this->slug = $slug;
     }
 }

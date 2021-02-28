@@ -11,22 +11,26 @@ class Tag extends Model
 
     use HasFactory;
 
-    public function meal(){
+    public function meal()
+    {
         return $this->belongsToMany(Meal::class, 'tags_on_dish');
     }
 
-    public function tagsTranslations(){
+    public function tagsTranslations()
+    {
         return $this->hasMany(TagTranslation::class);
     }
 
     /**
-    * // Todo maybe over mutators -> We are instantiating an object in seeders
-    */
-    public function getSlug() {
+     * // Todo maybe over mutators -> We are instantiating an object in seeders
+     */
+    public function getSlug()
+    {
         return $this->slug;
     }
 
-    public function setSlug(String $slug): void {
+    public function setSlug(String $slug): void
+    {
         $this->slug = $slug;
     }
 }

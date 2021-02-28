@@ -11,7 +11,8 @@ class IngredientTranslation extends Model
 
     public $table = 'ingredients_translations';
 
-    public function ingredient() {
+    public function ingredient()
+    {
         return $this->belongsTo(Ingredient::class);
     }
 }

@@ -10,7 +10,8 @@ class MealTranslation extends Model
     use HasFactory;
     public $table = 'meals_translations';
 
-    public function meal() {
+    public function meal()
+    {
         return $this->belongsTo(Meal::class, 'id', 'meal_id');
     }
 }

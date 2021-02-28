@@ -15,22 +15,26 @@ class IngredientMeal extends Model
     /**
      * // Todo maybe over mutators -> We are instantiating an object in seeders
      */
-    public function getIngredientsId() {
+    public function getIngredientsId()
+    {
         return $this->ingredient_id;
     }
 
-    public function setIngredientsId(String $ingredient_id): void {
+    public function setIngredientsId(String $ingredient_id): void
+    {
         $this->ingredient_id = $ingredient_id;
     }
 
-        /**
+    /**
      * // Todo maybe over mutators -> We are instantiating an object in seeders
      */
-    public function getMealId() {
+    public function getMealId()
+    {
         return $this->meal_id;
     }
 
-    public function setMealId(String $meal_id): void {
+    public function setMealId(String $meal_id): void
+    {
         $this->meal_id = $meal_id;
     }
 }

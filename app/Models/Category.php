@@ -11,22 +11,26 @@ class Category extends Model
 
     use HasFactory;
 
-    public function meal() {
+    public function meal()
+    {
         return $this->belongsTo(Meal::class);
     }
 
-    public function categoryTranslations() {
+    public function categoryTranslations()
+    {
         return $this->hasMany(CategoryTranslation::class);
     }
 
     /**
      * // Todo maybe over mutators -> We are instantiating an object in seeders
      */
-    public function getSlug() {
+    public function getSlug()
+    {
         return $this->slug;
     }
 
-    public function setSlug(String $slug): void {
+    public function setSlug(String $slug): void
+    {
         $this->slug = $slug;
     }
 }

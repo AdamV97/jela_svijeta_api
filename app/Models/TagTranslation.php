@@ -10,7 +10,8 @@ class TagTranslation extends Model
     use HasFactory;
     public $table = 'tags_translations';
 
-    public function tagsTranslation() {
+    public function tagsTranslation()
+    {
         return $this->belongsTo(Tag::class, 'id', 'tag_id');
     }
 }

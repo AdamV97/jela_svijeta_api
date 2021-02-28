@@ -13,27 +13,31 @@ class MetaRestHelper
 
     public function __construct(Request $request)
     {
-        $this->currentPage = $request->get('page') === null ? 1 :  (int)$request->get('page');
-        $this->itemsPerPage = $request->get('per_page') === null ? 'all' : (int)$request->get('per_page');
+        $this->currentPage = $request->get('page') === null ? 1 : (int) $request->get('page');
+        $this->itemsPerPage = $request->get('per_page') === null ? 'all' : (int) $request->get('per_page');
         $this->setTotalItems();
     }
 
-    public function getTotalItems(){
+    public function getTotalItems()
+    {
         return $this->totalItems;
     }
 
     /**
      * Inner setter not callable from outside
      */
-    private function setTotalItems(){
+    private function setTotalItems()
+    {
         $this->totalItems = Meal::all()->count();
     }
 
-    public function getCurrentPage(){
+    public function getCurrentPage()
+    {
         return $this->currentPage;
     }
 
-    public function getItemsPerPage(){
+    public function getItemsPerPage()
+    {
         return $this->itemsPerPage;
     }
 }

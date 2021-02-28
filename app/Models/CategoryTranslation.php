@@ -10,7 +10,8 @@ class CategoryTranslation extends Model
     use HasFactory;
     public $table = 'categories_translations';
 
-    public function categoryTranslation() {
+    public function categoryTranslation()
+    {
         return $this->belongsTo(Category::class);
     }
 }

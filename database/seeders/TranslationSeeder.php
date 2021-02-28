@@ -16,30 +16,31 @@ class TranslationSeeder extends Seeder
     /**
      * Use given data to insert translation
      */
-    public function insertTranslation(Int $id, String $mainColumn, String $table, String $en, String $cro, String $desc_cro=null, String $desc_en=null): void {
-        if($mainColumn === 'meal_id'){
+    public function insertTranslation(Int $id, String $mainColumn, String $table, String $en, String $cro, String $desc_cro = null, String $desc_en = null): void
+    {
+        if ($mainColumn === 'meal_id') {
             $arrayCro = [
                 $mainColumn => $id,
                 'language_id' => 1,
                 'translation' => $cro,
-                'description' => $desc_cro
+                'description' => $desc_cro,
             ];
             $arrayEn = [
                 $mainColumn => $id,
                 'language_id' => 2,
                 'translation' => $en,
-                'description' => $desc_en
+                'description' => $desc_en,
             ];
-        }else{
+        } else {
             $arrayCro = [
                 $mainColumn => $id,
                 'language_id' => 1,
-                'translation' => $cro
+                'translation' => $cro,
             ];
             $arrayEn = [
                 $mainColumn => $id,
                 'language_id' => 2,
-                'translation' => $en
+                'translation' => $en,
             ];
         }
 

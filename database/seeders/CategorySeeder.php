@@ -22,7 +22,8 @@ class CategorySeeder extends Seeder
         $this->insertCategories('Soup', 'Juha');
     }
 
-    private function insertCategories(String $en, String $cro): void {
+    private function insertCategories(String $en, String $cro): void
+    {
         $category = new Category();
         $category->slug = strtolower(str_replace(' ', '_', $en));
         $category->created_at = Carbon::now();
@@ -31,6 +32,6 @@ class CategorySeeder extends Seeder
 
         $lastId = $category->id;
         $translations = new TranslationSeeder();
-        $translations->insertTranslation($lastId,'category_id' ,'categories_translations', $en, $cro);
+        $translations->insertTranslation($lastId, 'category_id', 'categories_translations', $en, $cro);
     }
 }

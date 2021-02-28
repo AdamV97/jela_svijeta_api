@@ -25,16 +25,16 @@ class TagParser implements Rule
      */
     public function passes($attribute, $value)
     {
-        if(strlen($value) >= 1){
+        if (strlen($value) >= 1) {
             $request = explode(',', $value);
-            for($i = 0; $i < count($request); $i++){
-                if(is_numeric($request[$i])){
+            for ($i = 0; $i < count($request); $i++) {
+                if (is_numeric($request[$i])) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
             }
-        }else{
+        } else {
             return false;
         }
         return true;

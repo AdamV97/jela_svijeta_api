@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "92cc4fbd-1401-4d26-a4e9-77d0b3495268",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_meal_request",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/meals?lang=hr",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"meals"
+					],
+					"query": [
+						{
+							"key": "lang",
+							"value": "hr"
+						},
+						{
+							"key": "per_page",
+							"value": "10",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "with",
+							"value": "category,tags,ingredients",
+							"disabled": true
+						},
+						{
+							"key": "diff_time",
+							"value": "1493902343",
+							"disabled": true
+						},
+						{
+							"key": "tags",
+							"value": "1,2",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "!null",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_meal_request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/delete?mealId=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "mealId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
